@@ -22,9 +22,22 @@ public struct Optional<T>
         value = initial_value;
     }
 
+    /// <summary>
+    /// Creates a optional with a none.
+    /// </summary>
+    /// <returns>An Optional with a none value, and a non-usable value</returns>
     public static Optional<T> None()
     {
         return new Optional<T>(default(T), false);
+    }
+
+    /// <summary>
+    /// Creates a optional with a none and usable value.
+    /// </summary>
+    /// <returns>An Optional with a none value, and a usable value</returns>
+    public static Optional<T> None(T value)
+    {
+        return new Optional<T>(value, false);
     }
 
     public bool Extant => extant;
